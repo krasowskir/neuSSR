@@ -2,12 +2,13 @@ const nodeExternals = require("webpack-node-externals");
 const path = require("path");
 
 module.exports = {
-  entry: "./src/client.js",
+  entry: "./src/server.js",
   output: {
-    path: path.resolve(__dirname, "./dist/public"),
-    filename: "bundle.js"
+    path: path.resolve(__dirname, "./dist"),
+    filename: "server.js"
   },
-  target: "web",
+  externals: [nodeExternals()],
+  target: "node",
   module: {
     rules: [
       {
