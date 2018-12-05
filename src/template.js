@@ -1,6 +1,6 @@
 import React from "react";
 
-export default body =>
+export default (body, gists) =>
   `<!doctype html>
   <html>
     <head>
@@ -8,6 +8,7 @@ export default body =>
     </head>
     <body>
       <div id="app">${body}</div>
+      <script> window.gists = ${JSON.stringify(gists)}</script>
       <script src="/bundle.js" />
     </body>
   </html>`;
